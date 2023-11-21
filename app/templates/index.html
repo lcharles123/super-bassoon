@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Playlist Table</h1>
+    <table>
+        <tr>
+            <th>Playlist ID</th>
+            <th>Artist Name</th>
+            <th>Track ID</th>
+            <th>Date Added</th>
+        </tr>
+        {% for playlist in playlists %}
+            <tr>
+                <td>{{ playlist.id }}</td>
+                <td>{{ playlist.artist_name }}</td>
+                <td>{{ playlist.track_id }}</td>
+                <td>{{ playlist.date_added }}</td>
+            </tr>
+        {% else %}
+         <tr>
+                <td>No playlists found</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
