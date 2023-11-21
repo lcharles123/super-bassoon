@@ -36,6 +36,11 @@ class TestFlaskApp(unittest.TestCase):
         self.assertIn(b'Artist 1', response.data)
         self.assertIn(b'12345', response.data)
 
+    def test_help_page(self):
+        response = self.app.get('/help')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Help', response.data)
+
 
 if __name__ == '__main__':
     unittest.main()
