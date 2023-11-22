@@ -23,7 +23,7 @@ def index():
 
 @app.route('/help')
 def help():
-    return 'Help'
+    return render_template('help.html')
 
 
 
