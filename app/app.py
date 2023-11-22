@@ -21,6 +21,11 @@ def index():
     playlists = Playlist.query.all()
     return render_template('index.html', playlists=playlists)
 
+@app.route('/help')
+def help():
+    return 'Help'
+
+
 
 if __name__ == '__main__':
     db.drop_all()
